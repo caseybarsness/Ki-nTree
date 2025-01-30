@@ -511,9 +511,9 @@ urllib3 = ">=1.25.3"
 
 [package.source]
 type = "git"
-url = "https://gitlab.barsness.cloud/cbarsness/digikey-api.git"
+url = "https://github.com/caseybarsness/digikey-api"
 reference = "master"
-resolved_reference = "1833a86625d2dba556f034b4ab1ca206598375aa"
+resolved_reference = "812fc04073b5ff04fef1c6d3c4de47e28fdc2dae"
 
 [[package]]
 name = "dill"
@@ -556,13 +556,13 @@ test = ["pytest (>=6)"]
 
 [[package]]
 name = "fastapi"
-version = "0.115.7"
+version = "0.115.8"
 description = "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "fastapi-0.115.7-py3-none-any.whl", hash = "sha256:eb6a8c8bf7f26009e8147111ff15b5177a0e19bb4a45bc3486ab14804539d21e"},
-    {file = "fastapi-0.115.7.tar.gz", hash = "sha256:0f106da6c01d88a6786b3248fb4d7a940d071f6f488488898ad5d354b25ed015"},
+    {file = "fastapi-0.115.8-py3-none-any.whl", hash = "sha256:753a96dd7e036b34eeef8babdfcfe3f28ff79648f86551eb36bfc1b0bf4a8cbf"},
+    {file = "fastapi-0.115.8.tar.gz", hash = "sha256:0ce9111231720190473e222cdf0f07f7206ad7e53ea02beb1d2dc36e2f0741e9"},
 ]
 
 [package.dependencies]
@@ -2143,4 +2143,4 @@ test = ["black", "codecov", "coloredlogs", "coverage", "flake8", "mypy", "pytest
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.13"
-content-hash = "ec75fc3288ae90d6070386a38b95fbf4a9a294530c68300b4ab4e107ece16459"
+content-hash = "45f50c779f39f7f397be138c252b69668a60d2253f2ca804a126193d02c59123"
