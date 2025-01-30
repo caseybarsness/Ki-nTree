@@ -31,7 +31,7 @@ for supplier, data in global_settings.CONFIG_SUPPLIERS.items():
     ]
 
     # Add API fields
-    if supplier == 'Digi-Key':
+    if supplier == 'Digi-Key' or supplier == 'Digi-Key-Legacy':
         digikey_api_settings = config_interface.load_file(global_settings.CONFIG_DIGIKEY_API)
         supplier_settings[supplier]['Client ID'] = [
             digikey_api_settings['DIGIKEY_CLIENT_ID'],
@@ -690,7 +690,7 @@ class SupplierSettingsView(SettingsView):
         global_settings.load_suppliers()
         
         # API settings
-        if supplier == 'Digi-Key':
+        if supplier == 'Digi-Key' or supplier=='Digi-Key-Legacy':
             from ...search import digikey_api
             # Load settings from file
             settings_from_file = config_interface.load_file(global_settings.CONFIG_DIGIKEY_API)
@@ -781,7 +781,7 @@ class SupplierSettingsView(SettingsView):
         self.save_s(e, supplier, show_dialog=False)
 
         result = False
-        if supplier == 'Digi-Key':
+        if supplier == 'Digi-Key' or supplier == 'Digi-Key-Legacy':
             from ...search import digikey_api
             result = digikey_api.test_api()
         elif supplier == 'Mouser':

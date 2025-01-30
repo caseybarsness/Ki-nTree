@@ -1,6 +1,9 @@
 Digi-Key:
   enable: true
   name: Digi-Key
+Digi-Key-Legacy:
+  enable: true
+  name: Digi-Key-Legacy
 Mouser:
   enable: true
   name: Mouser

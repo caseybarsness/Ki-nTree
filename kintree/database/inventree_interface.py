@@ -393,7 +393,7 @@ def translate_supplier_to_form(supplier: str, part_info: dict) -> dict:
     def get_value_from_user_key(user_key: str, default_key: str, default_value=None) -> str:
         ''' Get value mapped from user search key, else default search key '''
         user_search_key = None
-        if supplier == 'Digi-Key':
+        if supplier == 'Digi-Key' or supplier=='Digi-Key-Legacy':
             user_search_key = settings.CONFIG_DIGIKEY.get(user_key, None)
         elif supplier == 'Mouser':
             user_search_key = settings.CONFIG_MOUSER.get(user_key, None)
@@ -422,7 +422,7 @@ def translate_supplier_to_form(supplier: str, part_info: dict) -> dict:
     if not supplier and supplier != 'custom':
         return part_form
     # Get default keys
-    if supplier == 'Digi-Key':
+    if supplier == 'Digi-Key' or supplier == 'Digi-Key-Legacy':
         default_search_keys = digikey_api.get_default_search_keys()
     elif supplier == 'Mouser':
         default_search_keys = mouser_api.get_default_search_keys()
@@ -484,6 +484,8 @@ def supplier_search(supplier: str, part_number: str, test_mode=False) -> dict:
     else:
         cprint(f'\n[MAIN]\t{supplier} search for {part_number}', silent=settings.SILENT)
         if supplier == 'Digi-Key':
+            part_info = digikey_api.fetch_part_info(part_number)
+        elif supplier == 'Digi-Key-Legacy':
             part_info = digikey_api.fetch_part_info_from_barcode(part_number)
         elif supplier == 'Mouser':
             part_info = mouser_api.fetch_part_info(part_number)
