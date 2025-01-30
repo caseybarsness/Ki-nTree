@@ -3,6 +3,6 @@ ENABLE_PROXY: false
 PASSWORD: !!binary |
   ''
 PROXIES: null
-SERVER_ADDRESS: ''
-USERNAME: ''
+SERVER_ADDRESS: 'http://inventree.localhost/'
+USERNAME: 'root'
 DATASHEET_UPLOAD: false

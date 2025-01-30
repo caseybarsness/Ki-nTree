@@ -89,6 +89,11 @@ def find_categories(part_details: str):
         subcategory = subcategory.get('name')
     return category, subcategory
 
+def fetch_part_info_from_barcode(barcode: str) -> dict:
+    # get part number from barcode
+    product_barcode_response = digikey.product_barcode(barcode)
+    partnumber = product_barcode_response.digi_key_part_number
+    return fetch_part_info(part_number=partnumber)    
 
 def fetch_part_info(part_number: str) -> dict:
     ''' Fetch part data from API '''

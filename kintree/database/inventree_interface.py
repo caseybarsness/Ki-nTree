@@ -484,7 +484,7 @@ def supplier_search(supplier: str, part_number: str, test_mode=False) -> dict:
     else:
         cprint(f'\n[MAIN]\t{supplier} search for {part_number}', silent=settings.SILENT)
         if supplier == 'Digi-Key':
-            part_info = digikey_api.fetch_part_info(part_number)
+            part_info = digikey_api.fetch_part_info_from_barcode(part_number)
         elif supplier == 'Mouser':
             part_info = mouser_api.fetch_part_info(part_number)
         elif supplier in ['Farnell', 'Newark', 'Element14']:
